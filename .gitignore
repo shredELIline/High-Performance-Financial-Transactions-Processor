@@ -1,0 +1,62 @@
+## .NET ##
+obj/
+bin/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]uild/
+[Bb]uilds/
+
+# Visual Studio
+.vs/
+.vscode/
+*.swp
+*.swo
+
+# NuGet
+.nuget/
+*.nupkg
+packages/
+
+# Entity Framework
+Migrations/
+App_Data/
+
+# SQL Server
+*.mdf
+*.ldf
+
+# Redis
+dump.rdb
+
+# Docker
+.docker/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+
+# Local development
+appsettings.Development.json
+appsettings.Local.json
+
+# IDE
+.idea/
+
+# Coverage
+coverage.xml
+.coverage
+lcov.info
+*.coverage
