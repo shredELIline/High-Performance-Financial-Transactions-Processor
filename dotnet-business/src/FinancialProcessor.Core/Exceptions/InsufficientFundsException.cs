@@ -17,13 +17,15 @@ namespace FinancialProcessor.Core.Exceptions
             Guid accountId,
             decimal currentBalance,
             decimal requestedAmount,
-            string? accountNumber = null)
+            string? accountNumber = null,
+            Exception? innerException = null)
         : base(
             errorCode: "INSUFFICIENT_FUNDS",
             userMessage: $"Insufficient funds in account {accountNumber ?? accountId.ToString()}. " +
                         $"Current balance: {currentBalance:C}, requested: {requestedAmount:C}",
             techincalDetails: $"AccountId: {accountId}, Balance: {currentBalance}, " +
-                             $"Requested: {requestedAmount}, Shortage: {requestedAmount - currentBalance}")
+                             $"Requested: {requestedAmount}, Shortage: {requestedAmount - currentBalance}",
+            innerException: innerException)
         {
             AccountId = accountId;
             CurrentBalance = currentBalance;
