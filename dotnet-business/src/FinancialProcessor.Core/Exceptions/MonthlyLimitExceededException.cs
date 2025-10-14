@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinancialProcessor.Core.Exceptions
+﻿namespace FinancialProcessor.Core.Exceptions
 {
     internal class MonthlyLimitExceededException : DomainException
     {
@@ -26,7 +20,7 @@ namespace FinancialProcessor.Core.Exceptions
             userMessage: $"Monthly limit in account {accountNumber ?? accountId.ToString()}. " +
                         $"Monthly limit: {monthlyLimit:C}, attempted amount: {attemptedAmount:C}, " +
                         $"already used this month: {alreadyUsedThisMonth:C}, remaining limit {monthlyLimit - alreadyUsedThisMonth}",
-            techincalDetails: $"AccountId: {accountId}, Monthly limit: {monthlyLimit: C}, Attempted amount: {attemptedAmount:C}" +
+            technicalDetails: $"AccountId: {accountId}, Monthly limit: {monthlyLimit: C}, Attempted amount: {attemptedAmount:C}" +
                         $"Already used this month: {alreadyUsedThisMonth:C}, Remaining limit {monthlyLimit - alreadyUsedThisMonth}",
             innerException: innerException)
         {

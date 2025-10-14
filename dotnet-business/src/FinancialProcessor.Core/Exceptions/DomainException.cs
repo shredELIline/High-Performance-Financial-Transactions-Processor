@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinancialProcessor.Core.Exceptions
+﻿namespace FinancialProcessor.Core.Exceptions
 {
     internal class DomainException : Exception
     {
@@ -42,15 +36,15 @@ namespace FinancialProcessor.Core.Exceptions
         public DomainException(
             string errorCode, 
             string userMessage, 
-            string techincalDetails, 
+            string technicalDetails, 
             Exception? innerException = null) 
         : base(
-            $"{errorCode}: {userMessage}, {techincalDetails}", 
+            $"{errorCode}: {userMessage}, {technicalDetails}", 
             innerException)
         {
             this.ErrorCode = errorCode;
             this.UserMessage = userMessage;
-            this.TechnicalDetails = techincalDetails;
+            this.TechnicalDetails = technicalDetails;
         }
     }
 }

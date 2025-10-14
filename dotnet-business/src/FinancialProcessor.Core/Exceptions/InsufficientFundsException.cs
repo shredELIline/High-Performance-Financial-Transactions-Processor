@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinancialProcessor.Core.Exceptions
+﻿namespace FinancialProcessor.Core.Exceptions
 {
     internal class InsufficientFundsException : DomainException
     {
@@ -23,7 +17,7 @@ namespace FinancialProcessor.Core.Exceptions
             errorCode: "INSUFFICIENT_FUNDS",
             userMessage: $"Insufficient funds in account {accountNumber ?? accountId.ToString()}. " +
                         $"Current balance: {currentBalance:C}, requested: {requestedAmount:C}",
-            techincalDetails: $"AccountId: {accountId}, Balance: {currentBalance}, " +
+            technicalDetails: $"AccountId: {accountId}, Balance: {currentBalance}, " +
                              $"Requested: {requestedAmount}, Shortage: {requestedAmount - currentBalance}",
             innerException: innerException)
         {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinancialProcessor.Core.Exceptions
+﻿namespace FinancialProcessor.Core.Exceptions
 {
     internal class FraudDetectedException : DomainException
     {
@@ -22,7 +16,7 @@ namespace FinancialProcessor.Core.Exceptions
             : base(
                 errorCode: "FRAUD_DETECTED",
                 userMessage: $"Transaction flagged as potentially fraudulent. Please contact support.",
-                techincalDetails: $"TransactionId: {transactionId}, " +
+                technicalDetails: $"TransactionId: {transactionId}, " +
                                  $"RiskScore: {riskScore}, " +
                                  $"FraudType: {fraudType}, " +
                                  $"TriggeredRules: {string.Join(", ", triggeredRules)}",

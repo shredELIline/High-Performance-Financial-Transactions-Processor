@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinancialProcessor.Core.Exceptions
+﻿namespace FinancialProcessor.Core.Exceptions
 {
     internal class DailyLimitExceededException : DomainException
     {
@@ -26,7 +20,7 @@ namespace FinancialProcessor.Core.Exceptions
             userMessage: $"Daily limit in account {accountNumber ?? accountId.ToString()}. " +
                         $"Daily limit: {dailyLimit:C}, attempted amount: {attemptedAmount:C}, " +
                         $"already used today: {alreadyUsedToday:C}, remaining limit {dailyLimit - alreadyUsedToday}",
-            techincalDetails: $"AccountId: {accountId}, Daily limit: {dailyLimit: C}, Attempted amount: {attemptedAmount:C}" +
+            technicalDetails: $"AccountId: {accountId}, Daily limit: {dailyLimit: C}, Attempted amount: {attemptedAmount:C}" +
                         $"Already used today: {alreadyUsedToday:C}, Remaining limit {dailyLimit - alreadyUsedToday}",
             innerException: innerException)
         {
